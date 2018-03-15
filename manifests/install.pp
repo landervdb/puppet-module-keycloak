@@ -35,8 +35,8 @@ class keycloak::install {
     source          => $keycloak::download_url,
     creates         => "${keycloak::install_dir}/keycloak-${keycloak::version}/bin",
     cleanup         => true,
-    user            => 'keycloak',
-    group           => 'keycloak',
+    user            => $keycloak::user,
+    group           => $keycloak::group,
   }
 
 }
